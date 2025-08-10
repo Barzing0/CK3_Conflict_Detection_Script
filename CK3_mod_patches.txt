@@ -1,112 +1,69 @@
 # Original mod | patches
-# Conflicts from this file will not be reported 
+# Mod Conflicts configured in this file will not be reported 
 
 # (RICE) Regional Immersion and Cultural Enrichment - CE & "The Catholic Trinity" (2730456007) are compatible with RICE but patch some RICE files
 # // MHG + RICE + EPE Compatch: ugc_3186143971.mod // RICE + EPE Compatibility Patch: ugc_2553043828.mod // CE is considered as a patch.
 ugc_2273832430.mod | ugc_2553043828.mod | ugc_3186143971.mod | ugc_2730456007.mod | ugc_2829397295.mod | ugc_2990017583.mod | ugc_3431648123.mod
-ugc_2273832430.mod | RICE_character_memories_mini_fix.mod | RICE+CE_tradition_african_agriculture_mini_fix.mod
 
 # (CFP) Community Flavor Pack 
-ugc_2220098919.mod | ugc_2996881191.mod | ugc_2764329234.mod | CFP+SRR.mod | CFP+EPE_missing_fixes.mod
-ugc_2220098919.mod | Phaze Body CFP+EPE.mod
+ugc_2220098919.mod | ugc_2996881191.mod | ugc_2764329234.mod
 
 # (EPE) Ethnicities and Portraits Expanded // MHG Patch: ugc_3186143971.mod // Better Ruler Designer: ugc_3275318194.mod | Congenital Beauty
-ugc_2507209632.mod | ugc_2996881191.mod | ugc_2553043828.mod | ugc_3186143971.mod | ugc_2509797306.mod | EPE+BG+MHG.mod
-ugc_2507209632.mod | CFP+EPE_missing_fixes.mod | EPE+commando.mod | EPE+commando+YAB.mod | ugc_3245958435.mod | ugc_2695438942.mod
-ugc_2507209632.mod | EPE+CE+BG+MHG.mod | Phaze Body CFP+EPE.mod
+ugc_2507209632.mod | ugc_2996881191.mod | ugc_2553043828.mod | ugc_3186143971.mod | ugc_2509797306.mod 
+ugc_2507209632.mod | ugc_3245958435.mod | ugc_2695438942.mod
+ugc_2507209632.mod | ugc_3536441047.mod | ugc_3540965691.mod
 # (EPE) > CE is compatible with EPE (same author)
 ugc_2507209632.mod | ugc_2829397295.mod
-# (EPE) > Phaze Body overwriite intentionnaly keys: gfx\portraits\portrait_modifiers -> 'clothes_effect', 'clothes', 'muscularity'
-ugc_2507209632.mod | Phaze Body.mod
 
-# (MHG) More Holding Graphics 
+# (MHG) More Holding Graphics
 ugc_2262523658.mod | ugc_2764329234.mod | ugc_3342827275.mod | ugc_2509797306.mod
-ugc_2262523658.mod | MHG+Personal Quarters.mod | COW3+MHG(adult_education patch).mod | EPE+BG+MHG.mod | MHG_+_Cultural_Armies_II.mod
+ugc_2262523658.mod | ugc_3536441047.mod | ugc_3540965691.mod
 
 # (CE) Culture Expanded // "The Catholic Trinity" (2730456007) is compatible but patch some CE files
 # // MHG +CE Patch: ugc_2947626935.mod
 ugc_2829397295.mod | ugc_2947626935.mod | ugc_2730456007.mod | ugc_2991595498.mod
-ugc_2829397295.mod | RICE+CE_tradition_african_agirculture_mini_fix.mod | Travel_The_Distance_+_CE_compatch.mod | EPE+CE+BG+MHG.mod |ugc_3436942749.mod
+ugc_2829397295.mod | ugc_3536441047.mod | ugc_3540965691.mod | ugc_3436942749.mod
 
 # (BG) Battle Graphics | Battle Graphics MHG Compatibility 
 ugc_3225355262.mod | ugc_3341748399.mod | EPE+BG+MHG.mod | EPE+CE+BG+MHG.mod
 
-# (YAB) Young And Beautiful
-ugc_2916314958.mod | EPE+commando+YAB.mod
-
 # COW3 + MHG
-ugc_2901477267.mod | ugc_3342827275.mod | COW3+MHG(adult_education patch).mod
+ugc_2901477267.mod | ugc_3342827275.mod
 
 # Your Personal Quarters
-ugc_3428246207.mod | MHG+Personal Quarters.mod | SRR+YPQ compatch.mod
+ugc_3428246207.mod | ugc_3530400355.mod
 
 # The Catholic Trinity | Holy Roman Triumph 1.16: Coronation Ceremonies
 ugc_2730456007.mod | ugc_3118461885.mod
 
 # Immersive Chaste Trait + "Love Marriage Family / Travel the Distance / Immersive Chaste Trait Compatch"
 # LMF is a patch for key "seduce" only
-ugc_2662352702.mod | ugc_3049846007.mod | ugc_3037969445.mod | Immersice Chaste Trait + Personality clashes.mod
+ugc_2662352702.mod | ugc_3049846007.mod | ugc_3037969445.mod
 
 # Love Marriage Family + "Love Marriage Family / Travel the Distance / Immersive Chaste Trait Compatch" 
-ugc_3037969445.mod | ugc_3049846007.mod | Houses_Traditions+Love_Marriage_Family.mod
+ugc_3037969445.mod | ugc_3049846007.mod
 
 # Travel the Distance + Love Marriage Family (LMF is by default compatible with TTD) + "Love Marriage Family / Travel the Distance / Immersive Chaste Trait Compatch"
 # LMF is a patch for key "seduce" only
-ugc_2743500919.mod | ugc_3037969445.mod | ugc_3049846007.mod | Travelers+TTD.mod | ugc_3037969445.mod | Travel_The_Distance_+_CE_compatch.mod | HT+TTD_compatch.mod
+ugc_2743500919.mod | ugc_3037969445.mod | ugc_3049846007.mod | ugc_3037969445.mod
 
 # A New Sensible Family 3 + Love Marriage Family (LMF is by default compatible with ANSF)
 ugc_3045026915.mod | ugc_3037969445.mod
 
-# Travelers | Travelers+TTD compatch
-ugc_3082182371.mod | Travelers+TTD.mod
-
 # Custom Title Form of Address + RUI:Character Unofficial
 ugc_2653885896.mod | ugc_3239002020.mod
 
-# Commando + EPE
-Commando.mod | EPE+commando.mod | EPE+commando+YAB.mod
-
-# EPE+commando.mod
-EPE+commando.mod | EPE+commando+YAB.mod
-
-# Weight of Crown + Make yourself work
-ugc_2784856709.mod | ugc_3495547916.mod | WOC_fix.mod
-
-# Personality clashes + Immerse Chaste Trait
-ugc_3501115405.mod | Immersice Chaste Trait + Personality clashes.mod
-
 # Overextension | Overextension - Traditions Art + Submod
-ugc_3034367754.mod | ugc_3034377344.mod | Over_Extension_adapted_decay.mod
-
-# Silk Road Reboot
-ugc_3489820942.mod | SRR+YPQ compatch.mod | CFP+SRR.mod | SRR+BG_Zoom.mod
-
-# BG Other Graphics: Zoom Scale Map 
-ugc_3232842149.mod | SRR+BG_Zoom.mod
+ugc_3034367754.mod | ugc_3034377344.mod
 
 # Traditions Art + | Overextension - Traditions Art + Submod
 ugc_2976385354.mod | ugc_3034377344.mod | ugc_2991595498.mod
 
-# Pervasive Crown Authority
-ugc_2692957667.mod | Deregulated_War.mod
-
-# RICE+CE_tradition_african_agriculture_mini_fix
-RICE+CE_tradition_african_agriculture_mini_fix.mod | ugc_2990017583.mod | ugc_2991595498.mod
-
 # Beautiful Portraits
 ugc_2700696193.mod | ugc_2695438942.mod
 
-# Congenital Beauty
-ugc_2695438942.mod | Congenital_traits+Congenital_Beauty.mod
-
-# 先天特质外貌修改与调整修复 Congenital traits affect portraits fix
-ugc_3446448644.mod | Congenital_traits+Congenital_Beauty.mod
-
-# Houses Traditions | LMF | TTD
-ugc_2590650832.mod | Houses_Traditions+Love_Marriage_Family.mod | HT+TTD_compatch.mod
-
 # Matched Eyebrow and Body Hair Colors Updated -> not patchs but accepted overrides (happen only for albino key)
-ugc_3280709023.mod | ugc_3446448644.mod | Congenital_traits+Congenital_Beauty.mod
+ugc_3280709023.mod | ugc_3446448644.mod
 
 # Eclipsed Crown: 724 AD | Eclipsed Crown + EPE Patch
 ugc_3416926796.mod | ugc_3416946158.mod
@@ -115,27 +72,15 @@ ugc_3416926796.mod | ugc_3416946158.mod
 ugc_2776769431.mod | ugc_3010587762.mod
 
 # Cultural Armies II | Cultural Armies II & Culture Expanded PATCH | Rice Men compatch
-ugc_3420486236.mod | ugc_3436942749.mod | ugc_3431648123.mod | MHG_+_Cultural_Armies_II.mod | Cultural_Armies_II_Saxon_Maa_fix.mod
+ugc_3420486236.mod | ugc_3436942749.mod | ugc_3431648123.mod
 
 # RUI + Overextension
 ugc_3239002020.mod | ugc_3519442085.mod
 
-# Phaze Body
-Phaze Body.mod | Phaze Body CFP+EPE.mod | CBO Unofficial Animation.mod
-
-# Better BarberShop
-ugc_2220326926.mod | Better Barbershop Phaze Extension.mod
-
-#Family Romance
-ugc_3102171241.mod | Gambo's_MESC_+_Family_Romance.mod
-
-# Gombo's MESC
-ugc_2941627704.mod | Gambo's_MESC_+_Family_Romance.mod
-
-# MB+ 
+# MB+ | MB + The Catholic Trinity patch
 ugc_2216670956.mod | ugc_2941627704.mod
 
-# The Catholic Trinity 
+# The Catholic Trinity | MB + The Catholic Trinity patch
 ugc_2730456007.mod | ugc_2941627704.mod
 
 #### ACCEPTED CONFLICTS
@@ -146,3 +91,4 @@ ugc_2220098919.mod | ugc_3428246207.mod
 
 # EPE + Better Ruler Designer on 'clothes' key in 01_clothes_base.txt
 ugc_2507209632.mod | ugc_3275318194.mod
+
