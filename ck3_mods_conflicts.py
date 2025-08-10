@@ -57,7 +57,7 @@ def has_mod_file(mod_file):
                         return True
     return False
 
-
+# not implemented yet
 # level of merge :
 #  (-1) no merge
 #   (0) simple merge (copy/override files)
@@ -714,8 +714,12 @@ def conflict_manager(mod_check):
         
     # === FLUSH REPORT ===
 
-    print_pool = ["\n🔍 Mods list (❌ = conflict):\n"]
-    log_content.append("\n🔍 Mods in conflict:")
+    if mod_check:
+        print_pool = [f'\n🔍 Mods list (❌ = conflict): (with "{mod_check}")\n']
+        log_content.append(f'\n🔍 Mods in conflict: (with "{mod_check}")')
+    else:
+        print_pool = ["\n🔍 Mods list (❌ = conflict):\n"]
+        log_content.append("\n🔍 Mods in conflict:")
 
     # first flush mod list
     nb_mod_in_conflict = 0
@@ -730,10 +734,17 @@ def conflict_manager(mod_check):
         if is_conflicting:
             nb_mod_in_conflict += 1
             conflict_txt = "❌"
-        line = (f"{conflict_txt} [{position}] {mod_name} → {mod_file}")
-        print_pool.append('\t' + color_text(line, 'white',True) if is_conflicting else '\t' + line)
+        if is_conflicting and mod_check or not mod_check:
+            line = (f"{conflict_txt} [{position}] {mod_name} → {mod_file}")
+            if mod_check and mod_name == mod_check:
+                print_pool.append('\t' + color_text(line, 'white',True) if is_conflicting else '\t' + line)
+            else:
+                print_pool.append('\t' + line)
         if is_conflicting:
-            log_content.append('\t'+line)
+            log_tab = '\t'
+            if mod_check and mod_name == mod_check:
+                log_tab = '>' * TAB_SIZE
+            log_content.append(log_tab + line)
 
     for l in print_pool:
         print(l.expandtabs(TAB_SIZE))
@@ -772,4 +783,5 @@ if __name__ == "__main__":
     mod = ""
     if len(sys.argv) > 1:
             mod = sys.argv[1]
+
     conflict_manager(mod)
