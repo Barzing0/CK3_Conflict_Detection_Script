@@ -2,6 +2,7 @@
 ⚠️this is an alpha version: expect inaccurate results in some cases.  
 
 This script detects conflicts between Crusader Kings III mods by comparing files, keys defined in the same relative paths.
+It uses CK3 launcher SQL Database to get active playest and get mods list.
 
 ## Features
 - Detects mod conflicts in CK3 files:
@@ -46,11 +47,11 @@ This script detects conflicts between Crusader Kings III mods by comparing files
    ugc_2871648329.mod
 6. CK3_conflicts_relpath_exception.txt contain subfolders where only file overriding is needed to check conflict 
 
-## usage
+## Usage
+1. Make active the playset you want to verify conflicts on
+2. via a terminal windows laucnh the script: python ck3_mods_conflicts.py
 
-python ck3_mods_conflicts.py
-
-you can also detect all conflict for 1 mod:
+NB: you can also ask the script to detect all conflict for 1 mod only:
   python ck3_mods_conflicts.py "name_of_mod"
 
 
