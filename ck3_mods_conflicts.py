@@ -1,20 +1,19 @@
-# Version 1.4
+# Version 1.4.1
 #   change_log:
 #   - added slave notion
 #   - added the posibility to check only 1 mod via the command line
 #   - display mods list with conflicting info
 #   - log conflicts by file extension
 #   - build a database, instead of directly log (for future use)
-#
-# TODO for next release : 
 #   - push EXT_FILES and FLAT_CONFLICT_FILES in a cfg file
-#   - use a file named accepted_key_conflict.txt which will contain accepted minor key conflicts : (rel_path, key) | mod_file1 | mod_file2 | ...
+#
+# TODO in next releases : 
+#   - use a file named 'accepted_key_conflict.txt' which will contain accepted minor key conflicts : (rel_path, key) | mod_file1 | mod_file2 | ...
 #   - create rules of regexp and bracket level to porcess keys correctly vs the way keys in files are overriden by mods in the differents folders of the game
 #   - create the merge functionnality
 #   
 
-import os, sys, re, sqlite3
-import time, threading
+import os, sys, ast, re, sqlite3
 from collections import defaultdict, Counter
 from urllib.parse import quote
 from typing import Any, Dict, List, Set
@@ -28,6 +27,7 @@ EXCEPTION_FILE = "CK3_conflicts_exception.txt"
 DEFINE_FILE = "CK3_define_files.txt"
 PATCH_FILE = "CK3_mod_patches.txt"
 RELPATH_EXCEPTION_FILE = "CK3_conflicts_relpath_exception.txt"
+FLAT_CONFIG = "flat_conflict.cfg"
 
 # size of tabulation for logs
 TAB_SIZE = 3
@@ -70,17 +70,43 @@ create_merged_mod = -1
 merged_mod_name = "merged_mod"
 merged_mod_tags = "Gameplay"
 
-# file extensions to process
-EXT_FILES = ["txt", "gui", "font"]#, "dds"]
-FLAT_CONFLICT_FILES = ["gui", "font"]#, "dds"]
 
-# === REGEX FOR KEY EXTRACTION ===
+def read_flat_conflict_cfg(cfg_path, var_name):
+    """
+    Reads a variable from a config file where the format is like:
+    EXT_FILES = ["txt", "gui", "font"]
+
+    :param cfg_path: Path to the config file
+    :param var_name: Name of the variable to read
+    :return: The value of the variable (Python type) or None if not found
+    """
+    pattern = re.compile(rf'^\s*{re.escape(var_name)}\s*=\s*(.+)$')
+    with open(cfg_path, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.startswith("#"):
+                continue
+            match = pattern.match(line)
+            if match:
+                try:
+                    return ast.literal_eval(match.group(1))
+                except (SyntaxError, ValueError):
+                    raise ValueError(f"Invalid format for {var_name} in {cfg_path}")
+    return None
+    
+# Parameters to process
+#   - files extension
+#   - extension files considered as flat files
+EXT_FILES = read_flat_conflict_cfg(FLAT_CONFIG, "EXT_FILES")
+FLAT_CONFLICT_FILES = read_flat_conflict_cfg(FLAT_CONFIG, "FLAT_CONFLICT_FILES")
+
+# not implemented yet
 # TODO: create a PATTERN rules by file extension (example: '.yaml' file use a different rule than '.txt' files)
 SPECIFIC_CONFLICT_RULES = {
     ("rel_path_0", "file_ext_0", r'reg_exp_0'),
     ("rel_path_1", "file_ext_1", r'reg_exp_1')
 }
 
+# === REGEX FOR KEY EXTRACTION ===
 KEY_PATTERN = re.compile(r'^([a-zA-Z0-9_]+)\s*=\s*\{')
 SUBKEY_PATTERN = re.compile(r'^\t([a-zA-Z0-9_]+)\s*=')
 
@@ -719,17 +745,17 @@ def conflict_manager(mod_check):
     # === FLUSH REPORT ===
 
     if mod_check:
-        print_pool = [f'\n🔍 Mods list (❌ = conflict): (with "{mod_check}")\n']
+        print_pool = [f'🔍 Mods list (❌ = conflict): (with "{mod_check}")\n']
         log_content.append(f'\n🔍 Mods in conflict: (with "{mod_check}")')
     else:
-        print_pool = ["\n🔍 Mods list (❌ = conflict):\n"]
+        print_pool = ["🔍 Mods list (❌ = conflict):\n"]
         log_content.append("\n🔍 Mods in conflict:")
 
     # first flush mod list
     nb_mod_in_conflict = 0
     for position, mod_infos in mod_list.items():
         (mod_name, mod_file, skipped) = mod_infos
-        if skipped:
+        if skipped and not mod_check:
             line = f'\t🚫 Skipping: [{position}] {mod_name} → {mod_file} (see "{EXCEPTION_FILE}")'
             print_pool.append(line)
             continue
@@ -764,13 +790,13 @@ def conflict_manager(mod_check):
         log_content.append("\n✅ No conflicts found between mods.\n")
         print("\n✅ No conflicts found between mods.\n")
     else:
-        line = f"\n❌  {nb_mod_in_conflict} mod(s) in conflict."
+        line = f"\n❌  {nb_mod_in_conflict} conflicting mods."
         print(line)
         log_content.append(line)
         line = f"❌  {total_conflicts} group(s) of conflicts."
         print(line)
         log_content.append(line)
-        line = f"❌  {total_key_conflicts} key(s) in conflicts."
+        line = f"❌  {total_key_conflicts} detected key(s) in conflicts.\n"
         print(line)
         log_content.append(line)
 
@@ -787,7 +813,4 @@ if __name__ == "__main__":
     mod = ""
     if len(sys.argv) > 1:
             mod = sys.argv[1]
-
     conflict_manager(mod)
-
-
