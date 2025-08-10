@@ -1,0 +1,2 @@
+# path with definition files (script will automatically consider subfolders)
+common\defines

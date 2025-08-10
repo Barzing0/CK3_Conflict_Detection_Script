@@ -1,0 +1,14 @@
+# Not processing these paths can be wrong, since it's possible to overwrite the vanilla keys (by overwritting vanilla file), 
+# but normally they shouldn't be overwriten since mechanisms are available to avoid this, check file in corresponding local game directory : 
+# _on_actions.info, music_categories.txt
+# Still check game file overwritting
+common\on_action
+common\genes
+music\music_player_categories
+data_binding
+gfx\portraits\accessories
+gfx\portraits\accessory_variations
+gfx\map\map_object_data\generated
+gfx\map\map_object_data
+gfx\map\environment
+gfx\court_scene\scene_settings
