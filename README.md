@@ -52,7 +52,7 @@ It uses CK3 launcher SQL Database to get active playest and get mods list.
 2. via a terminal windows laucnh the script: python ck3_mods_conflicts.py
 
 NB: you can also ask the script to detect all conflict for 1 mod only:  
-  python ck3_mods_conflicts.py "name_of_mod"
+    python ck3_mods_conflicts.py "name_of_mod"
 
 
 
