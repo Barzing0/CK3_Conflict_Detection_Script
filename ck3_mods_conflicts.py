@@ -1,13 +1,17 @@
-# Version 1.3
+# Version 1.4
 #   change_log:
 #   - added slave notion
 #   - added the posibility to check only 1 mod via the command line
+#   - display mods list with conflicting info
+#   - log conflicts by file extension
+#   - build a database, instead of directly log (for future use)
 #
 # TODO for next release : 
-#   - on first printed mods list add info if mod is conflicting
-#   - log conflicts by file extension
+#   - push EXT_FILES and FLAT_CONFLICT_FILES in a cfg file
 #   - use a file named accepted_key_conflict.txt which will contain accepted minor key conflicts : (rel_path, key) | mod_file1 | mod_file2 | ...
-#   - build a database, instead of a log_buffer
+#   - create rules of regexp and bracket level to porcess keys correctly vs the way keys in files are overriden by mods in the differents folders of the game
+#   - create the merge functionnality
+#   
 
 import os, sys, re, sqlite3
 import time, threading
@@ -785,4 +789,5 @@ if __name__ == "__main__":
             mod = sys.argv[1]
 
     conflict_manager(mod)
+
 
