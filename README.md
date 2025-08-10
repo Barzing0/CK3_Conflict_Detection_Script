@@ -1,5 +1,6 @@
 # CK3_Conflict_Detection_Script (1.4)
 ⚠️this is an alpha version: expect inaccurate results in some cases.  
+⚠️localization files processing is not implemented. 
 
 This script detects conflicts between Crusader Kings III mods by comparing files, keys defined in the same relative paths.
 It uses CK3 launcher SQL Database to get active playest and get mods list.
