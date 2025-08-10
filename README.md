@@ -43,7 +43,7 @@ It uses CK3 launcher SQL Database to get active playest and get mods list.
 4. in CK3_mod_patches.txt add mod with its patches (by descriptors, ex: ugc_2220098919.mod), example:  
    \# RICE | RICE + EPE compatch  
    ugc_2273832430.mod | ugc_2553043828.mod
-5. in CK3_conflicts_exception.txt add mods that you don't want to be checked for conflicts with (by descriptors, ex: ugc_2220098919.mod), example:
+5. in CK3_conflicts_exception.txt add mods that you don't want to be checked for conflicts with (by descriptors, ex: ugc_2220098919.mod), example:  
    \# Unofficial CK3 patch  
    ugc_2871648329.mod
 6. CK3_conflicts_relpath_exception.txt contain subfolders where only file overriding is needed to check conflict 
