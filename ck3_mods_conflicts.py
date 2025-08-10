@@ -758,7 +758,7 @@ def conflict_manager(mod_check):
         if mod_check:
             log_content.append('\n✅ No conflicts found for mod: "{mod_check}".')
         log_content.append("\n✅ No conflicts found between mods.\n")
-        print("✅ No conflicts found between mods.\n")
+        print("\n✅ No conflicts found between mods.\n")
     else:
         line = f"\n❌  {nb_mod_in_conflict} mod(s) in conflict."
         print(line)
@@ -774,7 +774,7 @@ def conflict_manager(mod_check):
     try:
         with open(OUTPUT_LOG_FILE, "w", encoding="utf-8") as f:
             f.write("\n".join([l.expandtabs(TAB_SIZE) for l in log_content]))
-        print(f"\n📄 Report saved at: {os.path.abspath(OUTPUT_LOG_FILE)}")
+        print(f'📄 Report saved at: "{os.path.abspath(OUTPUT_LOG_FILE)}"')
     except Exception as e:
         print(f"❌ Failed to write report: {e}")
 
@@ -785,3 +785,4 @@ if __name__ == "__main__":
             mod = sys.argv[1]
 
     conflict_manager(mod)
+
