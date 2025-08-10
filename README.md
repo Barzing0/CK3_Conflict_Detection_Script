@@ -49,7 +49,7 @@ It uses CK3 launcher SQL Database to get active playest and get mods list.
 6. CK3_conflicts_relpath_exception.txt contain subfolders where only file overriding is needed to check conflict 
 
 ## Usage
-1. Make active the playset you want to verify conflicts on
+1. In CK3 launcher, make active the playset you want to verify conflicts on
 2. via a terminal windows laucnh the script: python ck3_mods_conflicts.py
     - you can also ask the script to detect all conflict for 1 mod only: 
         - python ck3_mods_conflicts.py "name_of_mod"
