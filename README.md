@@ -1,5 +1,5 @@
 # CK3_Conflict_Detection_Script (1.4)
-⚠️this is an alpha version: expect inaccurate results in some cases)  
+⚠️this is an alpha version: expect inaccurate results in some cases.  
 
 This script detects conflicts between Crusader Kings III mods by comparing files, keys defined in the same relative paths.
 
